@@ -1,0 +1,14 @@
+Private Sub Form_Load()
+    Loading.FontName = "Tahoma"
+    Loading.FontSize = 10
+    
+End Sub
+
+Private Sub Timer1_Timer()
+    Loading.Caption = "Loading Please Wait...." & " " & ProgressBar1.Value & "%"
+    ProgressBar1.Value = ProgressBar1.Value + 1
+        If ProgressBar1.Value = ProgressBar1.Max Then
+            Timer1.Enabled = False
+            Unload Me
+        End If
+End Sub
